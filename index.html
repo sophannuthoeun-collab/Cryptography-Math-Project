@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher · Cryptography Tool</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- Optional: include a font for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- CARD 1: Caesar Cipher -->
+        <div class="crypto-card">
+            <!-- Header / Title -->
+            <div class="crypto-header">
+                <h1>Caesar Cipher · <span>shift crypto</span></h1>
+                <p>classical shift cipher with brute force option</p>
+            </div>
+
+            <!-- Historical Context Container -->
+            <div class="history-container">
+                <div class="history-icon">🏛️</div>
+                <div class="history-content">
+                    <h3>I. Classical Cryptography</h3>
+                    
+                    <div class="section-subhead">
+                        <h4>I.I. Caesar Cipher</h4>
+                    </div>
+                    
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>One of the earliest and most well-known forms of cryptography was developed by Emperor Julius Caesar. During times of war, he needed a way to send secret messages to his generals. His solution was simple but effective: shift each letter in the alphabet by three positions. For example, the letter A becomes D, B becomes E, and so on. This technique came to be known as the Caesar Cipher.</p>
+                        <span class="quote-mark">"</span>
+                    </div>
+                    
+                    <!-- Visual example -->
+                    <div class="history-example">
+                        <div class="example-label">Example:</div>
+                        <div class="example-grid">
+                            <div class="example-row">
+                                <span class="example-char">A</span>
+                                <span class="example-arrow">→</span>
+                                <span class="example-char">D</span>
+                            </div>
+                            <div class="example-row">
+                                <span class="example-char">B</span>
+                                <span class="example-arrow">→</span>
+                                <span class="example-char">E</span>
+                            </div>
+                            <div class="example-row">
+                                <span class="example-char">C</span>
+                                <span class="example-arrow">→</span>
+                                <span class="example-char">F</span>
+                            </div>
+                            <div class="example-row">
+                                <span class="example-char">HELLO</span>
+                                <span class="example-arrow">→</span>
+                                <span class="example-char">KHOOR</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Resource citation -->
+                    <div class="resource-container">
+                        <span class="resource-label">Source:</span>
+                        <a href="https://www.dcode.fr/caesar-cipher" target="_blank" class="resource-link">caesar cipher.net</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main input area -->
+            <div class="input-section">
+                <label for="message1">message</label>
+                <textarea id="message1" class="crypto-input" placeholder="Enter text to encrypt or decrypt..."></textarea>
+            </div>
+
+            <!-- Shift value control -->
+            <div class="shift-control">
+                <label for="shiftValue1">shift key (1-25)</label>
+                <div class="shift-input-wrapper">
+                    <input type="number" id="shiftValue1" class="shift-input" min="1" max="25" value="3">
+                    <div class="shift-badge">
+                        <span class="shift-icon">⚙️</span>
+                        <span class="shift-label">Caesar</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control row: encrypt & decrypt buttons -->
+            <div class="control-row">
+                <button class="btn btn-encrypt" id="encryptBtn1">
+                    <span>🔐</span> Encrypt
+                </button>
+                <button class="btn btn-decrypt" id="decryptBtn1">
+                    <span>🔓</span> Decrypt
+                </button>
+            </div>
+
+            <!-- Output area (result) -->
+            <div class="output-section">
+                <label for="result1">result</label>
+                <div class="output-wrapper">
+                    <textarea id="result1" class="crypto-output" placeholder="encrypted or decrypted text appears here..." readonly></textarea>
+                    <button class="copy-btn" id="copyBtn1" title="Copy to clipboard">📋</button>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <!-- CARD 2: General Shift Cipher -->
+        <div class="crypto-card">
+            <div class="history-container">
+                <div class="history-icon">🏛️</div>
+                <div class="history-content">
+                    <h3>I. Classical Cryptography</h3>
+                    
+                    <div class="section-subhead">
+                        <h4>I.II. General Shift Cipher</h4>
+                    </div>
+                    
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>The General Shift Cipher is a more advanced version of the Caesar Cipher. Instead of a fixed shift of three positions, it allows for any integer value as the shift. This means that you can choose any number to shift the letters in the alphabet, making it more versatile and secure.</p>
+                        <span class="quote-mark">"</span>
+                    </div>               
+                </div>
+            </div>
+
+            <!-- Main input area -->
+            <div class="input-section">
+                <label for="message2">message</label>
+                <textarea id="message2" class="crypto-input" placeholder="Enter text to encrypt or decrypt..."></textarea>
+            </div>
+
+            <!-- Shift value control -->
+            <div class="shift-control">
+                <label for="shiftValue2">shift key (1-25)</label>
+                <div class="shift-input-wrapper">
+                    <input type="number" id="shiftValue2" class="shift-input" min="1" max="25" value="5">
+                    <div class="shift-badge">
+                        <span class="shift-icon">⚙️</span>
+                        <span class="shift-label">General</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control row: encrypt & decrypt buttons -->
+            <div class="control-row">
+                <button class="btn btn-encrypt" id="encryptBtn2">
+                    <span>🔐</span> Encrypt
+                </button>
+                <button class="btn btn-decrypt" id="decryptBtn2">
+                    <span>🔓</span> Decrypt
+                </button>
+            </div>
+
+            <!-- Output area (result) -->
+            <div class="output-section">
+                <label for="result2">result</label>
+                <div class="output-wrapper">
+                    <textarea id="result2" class="crypto-output" placeholder="encrypted or decrypted text appears here..." readonly></textarea>
+                    <button class="copy-btn" id="copyBtn2" title="Copy to clipboard">📋</button>
+                </div>
+            </div>
+
+            <!-- Brute force section -->
+            <div class="brute-force-section">
+                <button class="btn btn-brute" id="bruteForceBtn2">
+                    <span>🔨</span> Brute Force Decrypt
+                </button>
+                <div class="brute-results" id="bruteResults2">
+                    <!-- Brute force results will appear here -->
+                </div>
+            </div>
+        </div>
+
+                <!-- CARD 3: Affine Cipher (Two Keys) -->
+        <div class="crypto-card">
+            <div class="history-container">
+                <div class="history-icon">🔑🔑</div>
+                <div class="history-content">
+                    <h3>I. Classical Cryptography</h3>
+                    
+                    <div class="section-subhead">
+                        <h4>I.III. Affine Cipher</h4>
+                    </div>
+                    
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>The Affine Cipher is a more complex encryption method that combines both a shift and a multiplication operation. It uses two keys: one for the shift and another for the multiplication. The formula for encryption is E(x) = (ax + b) mod 26, where 'a' and 'b' are the keys, and 'x' is the numerical representation of the letter.</p>
+                        <span class="quote-mark">"</span>
+                    </div>               
+                </div>
+            </div>
+
+            <!-- Main input area -->
+            <div class="input-section">
+                <label for="affineMessage">message</label>
+                <textarea id="affineMessage" class="crypto-input" placeholder="Enter text to encrypt or decrypt..."></textarea>
+            </div>
+
+            <!-- Two-key control -->
+            <div class="two-key-control">
+                <div class="key-group">
+                    <label for="affineKeyA">ENTER THE KEY A:</label>
+                    <input type="number" id="affineKeyA" class="key-input" min="1" max="25" value="1">
+                </div>
+                
+                <div class="key-group">
+                    <label for="affineKeyB">ENTER THE KEY B:</label>
+                    <input type="number" id="affineKeyB" class="key-input" min="0" max="25" value="3">
+                </div>
+                
+                <div class="key-badge">
+                    <span class="key-icon">🔢</span>
+                    <span class="key-label">Affine</span>
+                </div>
+            </div>
+
+            <!-- Control row: encrypt & decrypt buttons -->
+            <div class="control-row">
+                <button class="btn btn-encrypt" id="affineEncryptBtn">
+                    <span>🔐</span> Encrypt
+                </button>
+                <button class="btn btn-decrypt" id="affineDecryptBtn">
+                    <span>🔓</span> Decrypt
+                </button>
+            </div>
+
+            <!-- Output area (result) -->
+            <div class="output-section">
+                <label for="affineResult">RESULT</label>
+                <div class="output-wrapper">
+                    <textarea id="affineResult" class="crypto-output" placeholder="encrypted or decrypted text appears here..." readonly></textarea>
+                    <button class="copy-btn" id="copyAffineBtn" title="Copy to clipboard">📋</button>
+                </div>
+            </div>
+            
+            <!-- Brute force section - with UNIQUE IDs -->
+            <div class="brute-force-section">
+                <button class="btn btn-brute" id="affineBruteForceBtn">
+                    <span>🔨</span> Brute Force Decrypt
+                </button>
+                <div class="brute-results" id="affineBruteResults">
+                    <!-- Brute force results will appear here -->
+                </div>
+            </div>
+        </div>
+
+                <!-- CARD 4: Transposition Cipher -->
+        <div class="crypto-card">
+            <div class="history-container">
+                <div class="history-icon">🔄</div>
+                <div class="history-content">
+                    <h3>I. Classical Cryptography</h3>
+                    
+                    <div class="section-subhead">
+                        <h4>I.IV. Transposition Cipher</h4>
+                    </div>
+                    
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>In the fascinating world of cryptography, transposition ciphers stand out as one of the oldest and simplest forms of encryption. Rather than changing the actual letters or symbols (as substitution ciphers do), transposition ciphers rearrange the positions of the characters according to a specific system, creating a ciphertext that hides the original message.</p>
+                        <span class="quote-mark">"</span>
+                    </div>               
+                </div>
+            </div>
+
+            <!-- Main input area -->
+            <div class="input-section">
+                <label for="transpositionMessage">message</label>
+                <textarea id="transpositionMessage" class="crypto-input" placeholder="Enter text to encrypt or decrypt..."></textarea>
+            </div>
+
+            <!-- Key control -->
+            <div class="one-key-control">
+                <div class="key-group">
+                    <label for="transpositionKey">Enter the transposition key:</label>
+                    <input type="text" id="transpositionKey" class="key-input" placeholder="e.g., 4312 or COLUMN" value="4312">
+                </div>
+                
+                <div class="key-badge">
+                    <span class="key-icon">📊</span>
+                    <span class="key-label">Transposition</span>
+                </div>
+            </div>
+
+            <!-- Control row: encrypt & decrypt buttons -->
+            <div class="control-row">
+                <button class="btn btn-encrypt" id="transpositionEncryptBtn">
+                    <span>🔐</span> Encrypt
+                </button>
+                <button class="btn btn-decrypt" id="transpositionDecryptBtn">
+                    <span>🔓</span> Decrypt
+                </button>
+            </div>
+
+            <!-- Output area (result) -->
+            <div class="output-section">
+                <label for="transpositionResult">result</label>
+                <div class="output-wrapper">
+                    <textarea id="transpositionResult" class="crypto-output" placeholder="encrypted or decrypted text appears here..." readonly></textarea>
+                    <button class="copy-btn" id="copyTranspositionBtn" title="Copy to clipboard">📋</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 5: RSA Key Generation -->
+        <div class="crypto-card">
+            <div class="history-container">
+                <div class="history-icon">🔐🔢</div>
+                <div class="history-content">
+                    <h3>II. RSA Cryptography</h3>
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>RSA (Rivest-Shamir-Adleman) is a widely used asymmetric encryption algorithm that relies on the mathematical properties of prime numbers. It was invented in 1977 by Ron Rivest, Adi Shamir, and Leonard Adleman. RSA is based on the difficulty of factoring large composite numbers into their prime factors.</p>
+                        <span class="quote-mark">"</span>
+                    </div>
+                    <div class="section-subhead">
+                        <h4>II.I. RSA Key Generation</h4>
+                    </div>
+                    
+                                   
+                </div>
+            </div>
+
+            <!-- Two prime number inputs -->
+            <div class="two-key-control">
+                <div class="key-group">
+                    <label for="primeP">Enter prime number p:</label>
+                    <input type="number" id="primeP" class="key-input" min="2" value="61">
+                </div>
+                
+                <div class="key-group">
+                    <label for="primeQ">Enter prime number q:</label>
+                    <input type="number" id="primeQ" class="key-input" min="2" value="53">
+                </div>
+                
+                <div class="key-badge">
+                    <span class="key-icon">🔑</span>
+                    <span class="key-label">RSA Keys</span>
+                </div>
+            </div>
+
+            <!-- Generate Key button -->
+            <div class="control-row">
+                <button class="btn btn-generate" id="generateRSAKeys">
+                    <span>⚡</span> Generate RSA Keys
+                </button>
+            </div>
+
+            <!-- Key generation results -->
+            <div class="rsa-results" id="rsaKeyResults">
+                <div class="result-item">
+                    <span class="result-label">n (modulus):</span>
+                    <span class="result-value" id="modulusN">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">φ(n) (totient):</span>
+                    <span class="result-value" id="totient">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Public key (e):</span>
+                    <span class="result-value" id="publicKey">-</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Private key (d):</span>
+                    <span class="result-value" id="privateKey">-</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 6: RSA Encryption -->
+        <div class="crypto-card">
+            <div class="history-container">
+                <div class="history-icon">📝🔒</div>
+                <div class="history-content">
+                    <h3>II. RSA Cryptography</h3>
+                    
+                    <div class="section-subhead">
+                        <h4>II.II. RSA Encryption</h4>
+                    </div>
+                    
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>RSA encryption uses the public key (e, n) to transform plaintext into ciphertext. The message is converted to a number m, and encrypted as: c = m^e mod n. Only someone with the private key can decrypt it.</p>
+                        <span class="quote-mark">"</span>
+                    </div>               
+                </div>
+            </div>
+
+            <!-- Main input area -->
+            <div class="input-section">
+                <label for="rsaEncryptMessage">message to encrypt</label>
+                <textarea id="rsaEncryptMessage" class="crypto-input" placeholder="Enter text to encrypt with RSA..."></textarea>
+            </div>
+
+            <!-- RSA public key inputs -->
+            <div class="two-key-control">
+                <div class="key-group">
+                    <label for="rsaEncryptE">public key (e):</label>
+                    <input type="number" id="rsaEncryptE" class="key-input" min="2" value="17">
+                </div>
+                
+                <div class="key-group">
+                    <label for="rsaEncryptN">modulus (n):</label>
+                    <input type="number" id="rsaEncryptN" class="key-input" min="2" value="3233">
+                </div>
+                
+                <div class="key-badge">
+                    <span class="key-icon">🔓</span>
+                    <span class="key-label">Public</span>
+                </div>
+            </div>
+
+            <!-- Encrypt button -->
+            <div class="control-row">
+                <button class="btn btn-encrypt" id="rsaEncryptBtn">
+                    <span>🔐</span> RSA Encrypt
+                </button>
+            </div>
+
+            <!-- Output area (result) -->
+            <div class="output-section">
+                <label for="rsaEncryptResult">ciphertext result</label>
+                <div class="output-wrapper">
+                    <textarea id="rsaEncryptResult" class="crypto-output" placeholder="encrypted RSA ciphertext will appear here..." readonly></textarea>
+                    <button class="copy-btn" id="copyRSAEncrypt" title="Copy to clipboard">📋</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 7: RSA Decryption -->
+        <div class="crypto-card">
+            <div class="history-container">
+                <div class="history-icon">📝🔓</div>
+                <div class="history-content">
+                    <h3>II. RSA Cryptography</h3>
+                    
+                    <div class="section-subhead">
+                        <h4>II.III. RSA Decryption</h4>
+                    </div>
+                    
+                    <div class="history-quote">
+                        <span class="quote-mark">"</span>
+                        <p>RSA decryption uses the private key (d, n) to recover the original plaintext from ciphertext. The decryption formula is: m = c^d mod n. This works because of the mathematical properties of modular exponentiation.</p>
+                        <span class="quote-mark">"</span>
+                    </div>               
+                </div>
+            </div>
+
+            <!-- Main input area -->
+            <div class="input-section">
+                <label for="rsaDecryptMessage">ciphertext to decrypt</label>
+                <textarea id="rsaDecryptMessage" class="crypto-input" placeholder="Enter ciphertext to decrypt with RSA..."></textarea>
+            </div>
+
+            <!-- RSA private key inputs -->
+            <div class="two-key-control">
+                <div class="key-group">
+                    <label for="rsaDecryptD">private key (d):</label>
+                    <input type="number" id="rsaDecryptD" class="key-input" min="2" value="2753">
+                </div>
+                
+                <div class="key-group">
+                    <label for="rsaDecryptN">modulus (n):</label>
+                    <input type="number" id="rsaDecryptN" class="key-input" min="2" value="3233">
+                </div>
+                
+                <div class="key-badge">
+                    <span class="key-icon">🔒</span>
+                    <span class="key-label">Private</span>
+                </div>
+            </div>
+
+            <!-- Decrypt button -->
+            <div class="control-row">
+                <button class="btn btn-decrypt" id="rsaDecryptBtn">
+                    <span>🔓</span> RSA Decrypt
+                </button>
+            </div>
+
+            <!-- Output area (result) -->
+            <div class="output-section">
+                <label for="rsaDecryptResult">plaintext result</label>
+                <div class="output-wrapper">
+                    <textarea id="rsaDecryptResult" class="crypto-output" placeholder="decrypted plaintext will appear here..." readonly></textarea>
+                    <button class="copy-btn" id="copyRSADecrypt" title="Copy to clipboard">📋</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Demo footer -->
+        <div class="demo-footer">
+            <span>Classical Ciphers & RSA · preserving non-alphabetic characters</span>
+        </div>
+    </div>
+
+    <script src="./js/caesar-cipher.js"></script>
+    <script src="./js/affine-cipher.js"></script>
+    <script src="./js/general-shift-cipher.js"></script>
+    <script src="./js/tranposition-cipher.js"></script>
+    <script src="./js/rsa-decrypt.js"></script>
+    <script src="./js/rsa-encrypt.js"></script>
+    <script src="./js/rsa-generate.js"></script>
+</body>
+</html>
